@@ -8,6 +8,10 @@ import rootReducer from "./modules";
 import {Provider} from "react-redux";
 import {configureStore} from "@reduxjs/toolkit";
 import logger from 'redux-logger'
+//style 관련
+import GlobalStyle from "./resources/style/GlobalStyle";
+import {ThemeProvider} from "styled-components";
+import theme from "./resources/style/theme";
 
 
 const store = configureStore({
@@ -21,9 +25,12 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
       <Provider store={store}>
-          <BrowserRouter>
-              <App />
-          </BrowserRouter>
+          <ThemeProvider theme={theme}>
+              <GlobalStyle/>
+              <BrowserRouter>
+                  <App />
+              </BrowserRouter>
+          </ThemeProvider>
       </Provider>
   </React.StrictMode>
 );
