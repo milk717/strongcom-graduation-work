@@ -21,9 +21,9 @@ export default function AppBar({
                         >
                             {appBarTitle}
                         </Typography>
-                        <WhiteLink to='/notice'>
+                        <StyledLink to='/notice'>
                             <NotificationsNoneIcon/>
-                        </WhiteLink>
+                        </StyledLink>
                     </Toolbar>
                 </DefaultAppBar>
             </Box>
@@ -33,12 +33,12 @@ export default function AppBar({
 }
 
 const DefaultAppBar = styled(MuiAppBar)`
-  background-color: ${props => props.theme.color.primary};
-  color: ${props => props.theme.color.white};
+  background-color: ${props => props.theme.color.white};
+  color: ${props => props.theme.color.primary};
 `;
 
-const WhiteLink = styled(Link)`
-  color:  ${props => props.theme.color.white};
+const StyledLink = styled(Link)`
+  color:  ${props => props.theme.color.primary};
   display: flex;
 `
 
