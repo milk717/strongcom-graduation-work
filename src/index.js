@@ -12,26 +12,28 @@ import logger from 'redux-logger'
 import GlobalStyle from "./resources/style/GlobalStyle";
 import {ThemeProvider} from "styled-components";
 import theme from "./resources/style/theme";
+import { StyledEngineProvider } from '@mui/material';
 
-
-const store = configureStore({
-    reducer: rootReducer,
-    middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),
-    devTools: process.env.NODE_ENV !== "production",
-
-});
+// const store = configureStore({
+//     reducer: rootReducer,
+//     middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),
+//     devTools: process.env.NODE_ENV !== "production",
+//
+// });
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
   <React.StrictMode>
-      <Provider store={store}>
+      {/*<Provider store={store}>*/}
+      <StyledEngineProvider injectFirst>
           <ThemeProvider theme={theme}>
               <GlobalStyle/>
               <BrowserRouter>
                   <App />
               </BrowserRouter>
           </ThemeProvider>
-      </Provider>
+      </StyledEngineProvider>
+      {/*</Provider>*/}
   </React.StrictMode>
 );
 

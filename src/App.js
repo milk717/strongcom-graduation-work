@@ -5,8 +5,8 @@ import HomePage from "./page/HomePage";
 function App() {
     return (
           <Routes>
-            <Route path='./' element={Main}>
-                <Route path = 'home' element={HomePage}/>
+            <Route path='/' element={<Main/>}>
+                <Route path = 'home' element={<HomePage/>}/>
             </Route>
           </Routes>
     );
