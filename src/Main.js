@@ -1,9 +1,15 @@
 import BasicAppBar from "./components/BasicAppBar";
+import BottomBar from "./components/BottomBar";
 
 export default function Main(){
     return(
         <>
-            <BasicAppBar/>
+            <header>
+                <BasicAppBar/>
+            </header>
+            <footer>
+                <BottomBar/>
+            </footer>
         </>
     );
 }
