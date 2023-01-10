@@ -1,12 +1,11 @@
 import * as React from 'react';
 import styled from 'styled-components';
-import {AppBar, Box, Toolbar, Typography} from "@mui/material";
+import {AppBar as MuiAppBar, Box, Toolbar, Typography} from "@mui/material";
 import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
 import {Link} from "react-router-dom";
-import {viewWidthCalc} from "../lib/ViewportCalculate";
 
 
-export default function BasicAppBar({
+export default function AppBar({
                                         appBarTitle = 'Home',
                                     }) {
     return (
@@ -33,7 +32,7 @@ export default function BasicAppBar({
     );
 }
 
-const DefaultAppBar = styled(AppBar)`
+const DefaultAppBar = styled(MuiAppBar)`
   background-color: ${props => props.theme.color.primary};
   color: ${props => props.theme.color.white};
 `;
