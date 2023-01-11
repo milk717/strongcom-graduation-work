@@ -11,10 +11,9 @@ export default function AppBar({
                                         appBarTitle ,
                                     }) {
     const location = useLocation();
-    const [title, setTitle] = useState(appBarTitle || pageList.filter(v=>v.pathname === location.pathname)[0].text);
-
+    const [title, setTitle] = useState(appBarTitle || pageList.filter(v=>v.pathname === location.pathname)[0]?.text);
     useEffect(()=>{
-        setTitle(pageList.filter(v=>v.pathname === location.pathname)[0].text);
+        setTitle(pageList.filter(v=>v.pathname === location.pathname)[0]?.text);
     },[location])
 
     return (
