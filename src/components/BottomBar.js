@@ -6,10 +6,14 @@ import ListAltOutlinedIcon from '@mui/icons-material/ListAltOutlined';
 import GroupOutlinedIcon from '@mui/icons-material/GroupOutlined';
 import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
 import styled from "styled-components";
+import {useLocation, useNavigate} from "react-router-dom";
+import {pageList} from "../resources/string";
 
 
 export default function BottomBar() {
-    const [value, setValue] = useState(0);
+    const location = useLocation();
+    const navigate = useNavigate();
+    const [value, setValue] = useState(pageList.filter(v=>v.pathname === location.pathname)[0].bottomId);
     return (
         <>
             <Box sx={{width: '100%'}}>
@@ -17,12 +21,13 @@ export default function BottomBar() {
                     value={value}
                     onChange={(event, newValue) => {
                         setValue(newValue);
+                        navigate(pageList[newValue].pathname);
                     }}
                 >
-                    <WhiteBottomNavigationAction label = "홈" icon={<HomeOutlinedIcon/>}/>
-                    <WhiteBottomNavigationAction label = "리스트" icon={<ListAltOutlinedIcon/>}/>
-                    <WhiteBottomNavigationAction label = "그룹" icon={<GroupOutlinedIcon/>}/>
-                    <WhiteBottomNavigationAction label = "설정" icon={<SettingsOutlinedIcon/>}/>
+                    <WhiteBottomNavigationAction label = {pageList[0].text} icon={<HomeOutlinedIcon/>}/>
+                    <WhiteBottomNavigationAction label = {pageList[1].text} icon={<ListAltOutlinedIcon/>}/>
+                    <WhiteBottomNavigationAction label = {pageList[2].text} icon={<GroupOutlinedIcon/>}/>
+                    <WhiteBottomNavigationAction label = {pageList[3].text} icon={<SettingsOutlinedIcon/>}/>
                 </StyledBottomNav>
             </Box>
         </>
