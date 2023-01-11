@@ -8,7 +8,8 @@ const theme = {
         background: '#F5F5F6',
         accent:'#082040',
         black:'#000',
-        white:'#fff'
+        white:'#fff',
+        gray:'#898989'
     }
 }
 
