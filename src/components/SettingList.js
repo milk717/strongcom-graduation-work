@@ -13,7 +13,7 @@ function MenuItem({menu}) {
                         ?
                         <>
                             {
-                                menu.subMenu.map(menu => <SubTitle>{menu.menuName}</SubTitle>)
+                                menu.subMenu.map(menu => <SubTitle key={menu.key}>{menu.menuName}</SubTitle>)
                             }
                             <Divider/>
                         </>
@@ -29,7 +29,7 @@ export default function SettingList() {
         <>
             {
                 settingList.map(menu =>
-                    <MenuItem menu={menu}/>
+                    <MenuItem key = {menu.key} menu={menu}/>
                 )
             }
         </>

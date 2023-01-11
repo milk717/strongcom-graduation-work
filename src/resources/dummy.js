@@ -4,7 +4,7 @@ export const dummyTaskData = [
     {id: 2, title: '텀블러 챙기기', subtitle: '매일 상시 알림'},
 ];
 export const dummyNoticeData = [
-    {id: 0, title: '알림은', subtitle: '1'},
-    {id: 1, title: '뭐였더라', subtitle: '2'},
-    {id: 2, title: '기억이 안나네', subtitle: '3'},
+    {id: 10, title: '알림은', subtitle: '1'},
+    {id: 11, title: '뭐였더라', subtitle: '2'},
+    {id: 12, title: '기억이 안나네', subtitle: '3'},
 ]

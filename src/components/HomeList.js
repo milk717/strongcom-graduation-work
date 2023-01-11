@@ -6,7 +6,7 @@ export default function HomeList({listData}){
         <>
             <List sx={{width: '100%'}}>
                 {listData.map((value,index) => (
-                    <>
+                    <div key = {value.id}>
                         <ListItemBox
                             key={value.id}
                             disableGutters
@@ -16,7 +16,7 @@ export default function HomeList({listData}){
                         {
                             (index < listData.length -1 ) ? <Divider /> : null
                         }
-                    </>
+                    </div>
                     ))}
             </List>
         </>
