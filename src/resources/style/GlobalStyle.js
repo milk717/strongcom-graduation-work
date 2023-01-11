@@ -8,9 +8,14 @@ const GlobalStyle = createGlobalStyle`
   }
   
   header{
-    position: fixed;
+    position: relative;
     top: 0;
     width: 100%;
+  }
+  
+  main{
+    position: relative;
+    padding: 16px;
   }
   
   footer{
