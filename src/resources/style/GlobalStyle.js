@@ -15,7 +15,6 @@ const GlobalStyle = createGlobalStyle`
   }
   
   main{
-    position: relative;
     padding: 16px;
     background-color: ${props=>props.theme.color.background};
     min-height: ${viewHeightCalc(720,{})};
