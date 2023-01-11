@@ -42,12 +42,12 @@ export default function AppBar({
 }
 
 const DefaultAppBar = styled(MuiAppBar)`
-  background-color: ${props => props.theme.color.white};
-  color: ${props => props.theme.color.primary};
+  background-color: ${props => props.theme.color.primaryLight};
+  color: ${props => props.theme.color.white};
 `;
 
 const StyledLink = styled(Link)`
-  color:  ${props => props.theme.color.primary};
+  color:  ${props => props.theme.color.white};
   display: flex;
 `
 
