@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import {viewHeightCalc} from "../../lib/ViewportCalculate";
 
 const GlobalStyle = createGlobalStyle`
 
@@ -16,6 +17,8 @@ const GlobalStyle = createGlobalStyle`
   main{
     position: relative;
     padding: 16px;
+    background-color: ${props=>props.theme.color.background};
+    min-height: ${viewHeightCalc(720,{})};
   }
   
   footer{
