@@ -1,16 +1,15 @@
 import {List, ListItem, ListItemText as MuiListItemText} from "@mui/material";
 import styled from "styled-components";
+import {useDispatch, useSelector} from "react-redux";
 
-const dummyData = [
-    {id: 0, title: '대추차 마시고 나가기', subtitle: '오늘 한번만 알림'},
-    {id: 1, title: '맥북 충전기 챙기기', subtitle: '매일 오전 11이 이전 외출 시 알림'},
-    {id: 2, title: '텀블러 챙기기', subtitle: '매일 상시 알림'},
-]
 export default function TaskList() {
+    const reminder = useSelector((state)=>state.reminder.list);
+    const dispatch = useDispatch();
+
     return (
         <>
             <List sx={{width: '100%'}}>
-                {dummyData.map((value) => (
+                {reminder.map((value) => (
                     <ListItemBox
                         key={value.id}
                         disableGutters
