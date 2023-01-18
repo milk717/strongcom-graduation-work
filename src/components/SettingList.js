@@ -29,7 +29,7 @@ export default function SettingList() {
         <>
             {
                 settingList.map(menu =>
-                    <MenuItem key = {menu.key} menu={menu}/>
+                    <MenuItem key={menu.key} menu={menu}/>
                 )
             }
         </>
@@ -44,5 +44,5 @@ const MenuTitle = styled.p`
 const SubTitle = styled.p`
   font-size: 16px;
   margin: 8px;
-  color: ${props=>props.theme.color.gray}
+  color: ${props => props.theme.color.gray}
 `
