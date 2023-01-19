@@ -13,10 +13,15 @@ import GlobalStyle from "./resources/style/GlobalStyle";
 import {ThemeProvider} from "styled-components";
 import theme from "./resources/style/theme";
 import {StyledEngineProvider} from '@mui/material';
+import {jsonApi} from "./api/jsonApi";
+import {reminderSlice} from "./modules/reminderSlice";
 
 const store = configureStore({
-    reducer: rootReducer,
-    middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),
+    reducer: {
+        reminder: reminderSlice.reducer,
+        [jsonApi?.reducerPath]: jsonApi?.reducer,
+    },
+    middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(jsonApi.middleware),
     devTools: process.env.NODE_ENV !== "production",
 
 });

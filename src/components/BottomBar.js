@@ -26,7 +26,6 @@ export default function BottomBar() {
                 >
                     <WhiteBottomNavigationAction label = {pageList[0].text} icon={<HomeOutlinedIcon/>}/>
                     <WhiteBottomNavigationAction label = {pageList[1].text} icon={<ListAltOutlinedIcon/>}/>
-                    <WhiteBottomNavigationAction label = {pageList[2].text} icon={<GroupOutlinedIcon/>}/>
                     <WhiteBottomNavigationAction label = {pageList[3].text} icon={<SettingsOutlinedIcon/>}/>
                 </StyledBottomNav>
             </Box>

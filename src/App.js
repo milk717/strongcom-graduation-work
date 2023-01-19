@@ -2,7 +2,6 @@ import {Route, Routes} from "react-router-dom";
 import Main from "./Main";
 import HomePage from "./page/HomePage";
 import ListPage from "./page/ListPage";
-import GroupPage from "./page/GroupPage";
 import SettingPage from "./page/SettingPage";
 import AddPage from "./page/AddPage";
 
@@ -13,7 +12,6 @@ function App() {
                 <Route path = '/' element={<HomePage/>}/>
                 <Route path = 'home' element={<HomePage/>}/>
                 <Route path = 'list' element={<ListPage/>}/>
-                <Route path = 'group' element={<GroupPage/>}/>
                 <Route path = 'setting' element={<SettingPage/>}/>
             </Route>
             <Route path = 'add' element={<AddPage/>}/>

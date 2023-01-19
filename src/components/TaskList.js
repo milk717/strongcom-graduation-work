@@ -1,10 +1,14 @@
 import {List, ListItem, ListItemText as MuiListItemText} from "@mui/material";
 import styled from "styled-components";
 import {useDispatch, useSelector} from "react-redux";
+import {useGetReminderQuery} from "../api/jsonApi";
 
 export default function TaskList() {
     const reminder = useSelector((state)=>state.reminder.list);
     const dispatch = useDispatch();
+    // const {data, error, isLoading} = useGetReminderQuery();
+
+    // if(isLoading) return 'Loading...'
 
     return (
         <>
