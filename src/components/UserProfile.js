@@ -1,6 +1,6 @@
 import {Avatar as MuiAvatar, Stack} from "@mui/material";
 import styled from "styled-components";
-import {viewWidthCalc} from "../lib/ViewportCalculate";
+import {viewWidthCalc} from "../lib/viewportCalculate";
 
 export default function UserProfile(){
     return(

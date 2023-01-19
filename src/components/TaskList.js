@@ -6,16 +6,17 @@ import {useGetReminderQuery} from "../api/jsonApi";
 export default function TaskList() {
     const reminder = useSelector((state)=>state.reminder.list);
     const dispatch = useDispatch();
-    // const {data, error, isLoading} = useGetReminderQuery();
+    const {data, error, isLoading} = useGetReminderQuery();
 
-    // if(isLoading) return 'Loading...'
+    if(isLoading) return 'Loading...'
+    console.log(data)
 
     return (
         <>
             <List sx={{width: '100%'}}>
-                {reminder.map((value) => (
+                {data.map((value) => (
                     <ListItemBox
-                        key={value.id}
+                        key={value.reminderId}
                         disableGutters
                     >
                         <ListItemText primary={value.title} secondary={value.subtitle}/>

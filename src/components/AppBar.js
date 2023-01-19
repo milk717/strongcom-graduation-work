@@ -19,7 +19,7 @@ export default function AppBar({
     return (
         <>
             <Box sx={{width: '100%'}}>
-                <DefaultAppBar position="static">
+                <DefaultAppBar>
                     <Toolbar>
                         <Typography
                             variant="h6"
@@ -41,6 +41,7 @@ export default function AppBar({
 }
 
 const DefaultAppBar = styled(MuiAppBar)`
+  position: fixed;
   background-color: ${props => props.theme.color.primaryLight};
   color: ${props => props.theme.color.white};
 `;
