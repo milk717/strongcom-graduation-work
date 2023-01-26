@@ -29,6 +29,6 @@ const StyledBox = styled.div`
   justify-content: space-between;
   box-shadow: 2px 2px 8px 2px rgb(55, 71, 107, 0.5);
   border-radius: 16px;
-  padding: 8px 8px 0 8px ;
+  padding: 16px 16px 0 16px ;
   background-color: ${props=>props.theme.color.white};
 `

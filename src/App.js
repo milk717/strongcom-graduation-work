@@ -1,20 +1,25 @@
 import {Route, Routes} from "react-router-dom";
-import Main from "./Main";
-import HomePage from "./page/HomePage";
-import ListPage from "./page/ListPage";
-import SettingPage from "./page/SettingPage";
+import MainPage from "./page/MainPage";
+import HomeContainer from "./containers/HomeContainer";
+import ListContainer from "./containers/ListContainer";
+import SettingContainer from "./containers/SettingContainer";
 import AddPage from "./page/AddPage";
+import ReminderInfoInputContainer from "./containers/ReminderInfoInputContainer";
+import RepetitionContainer from "./containers/RepetitionContainer";
 
 function App() {
     return (
           <Routes>
-            <Route path='/' element={<Main/>}>
-                <Route path = '/' element={<HomePage/>}/>
-                <Route path = 'home' element={<HomePage/>}/>
-                <Route path = 'list' element={<ListPage/>}/>
-                <Route path = 'setting' element={<SettingPage/>}/>
+            <Route path='/' element={<MainPage/>}>
+                <Route path = '/' element={<HomeContainer/>}/>
+                <Route path = 'home' element={<HomeContainer/>}/>
+                <Route path = 'list' element={<ListContainer/>}/>
+                <Route path = 'setting' element={<SettingContainer/>}/>
             </Route>
-            <Route path = 'add' element={<AddPage/>}/>
+            <Route path = 'add' element={<AddPage/>}>
+                <Route path = '' element={<ReminderInfoInputContainer/>}/>
+                <Route path = 'repetition' element={<RepetitionContainer/>}/>
+            </Route>
           </Routes>
     );
 }

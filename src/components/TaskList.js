@@ -16,7 +16,7 @@ export default function TaskList() {
             <List sx={{width: '100%'}}>
                 {data.map((value) => (
                     <ListItemBox
-                        key={value.reminderId}
+                        key={value._id}
                         disableGutters
                     >
                         <ListItemText primary={value.title} secondary={value.subtitle}/>
