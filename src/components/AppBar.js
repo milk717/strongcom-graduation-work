@@ -18,7 +18,7 @@ export default function AppBar({
 
     return (
         <>
-            <Box sx={{width: '100%'}}>
+            <Box>
                 <DefaultAppBar>
                     <Toolbar>
                         <Typography

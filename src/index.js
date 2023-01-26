@@ -21,7 +21,7 @@ const store = configureStore({
         reminder: reminderSlice.reducer,
         [jsonApi?.reducerPath]: jsonApi?.reducer,
     },
-    middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(jsonApi.middleware),
+    middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(jsonApi.middleware, logger),
     devTools: process.env.NODE_ENV !== "production",
 
 });

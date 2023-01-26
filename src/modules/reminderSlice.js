@@ -1,27 +1,40 @@
 import {createSlice} from '@reduxjs/toolkit';
+import dayjs from "dayjs";
 
 const initialState = {
-    value: 0,
-    list: [
-        {id: 0, title: '대추차 마시고 나가기', subtitle: '오늘 한번만 알림'},
-        {id: 1, title: '맥북 충전기 챙기기', subtitle: '매일 오전 11이 이전 외출 시 알림'},
-        {id: 2, title: '텀블러 챙기기', subtitle: '매일 상시 알림'},
-    ],
+    title: '',
+    content: '',
+    startDate: dayjs().format(),
+    endDate: dayjs().format(),
+    startTime: dayjs().format(),
+    endTime: dayjs().format(),
 }
 
 export const reminderSlice = createSlice({
     name: 'reminder',
     initialState,
     reducers: {
-        increment: (state) => {
-            state.value += 1
+        titleInput: (state, action) => {
+            state.title = action.payload;
         },
-        decrement: (state) => {
-            state.value += 1
+        contentInput: (state,action) => {
+            state.content = action.payload;
+        },
+        startDateInput: (state,action) => {
+            state.startDate = action.payload;
+        },
+        endDateInput: (state,action) => {
+            state.endDate = action.payload;
+        },
+        startTimeInput: (state,action) => {
+            state.startDate = action.payload;
+        },
+        endTimeInput: (state,action) => {
+            state.endDate = action.payload;
         },
     }
 });
 
-export const {increment, decrement} = reminderSlice.actions
+export const {titleInput, contentInput,startDateInput,endDateInput,startTimeInput,endTimeInput} = reminderSlice.actions
 
 export default reminderSlice.reducer

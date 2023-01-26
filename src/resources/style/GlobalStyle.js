@@ -8,6 +8,10 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
   }
   
+  body{
+    background-color: ${props=>props.theme.color.background};
+  }
+  
   header{
     position: relative;
     top: 0;
@@ -16,9 +20,8 @@ const GlobalStyle = createGlobalStyle`
   
   main{
     padding: 16px;
-    margin-top: ${viewHeightCalc(56,{})};
+    margin-top: 56px;
     background-color: ${props=>props.theme.color.background};
-    min-height: ${viewHeightCalc(720-102,{})};
   }
   
   footer{

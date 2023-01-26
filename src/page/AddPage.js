@@ -1,12 +1,15 @@
-import AddPageAppBar from "../components/AddPageAppBar";
-import {Outlet, useLocation} from "react-router-dom";
-import AddTaskIcon from '@mui/icons-material/AddTask';
+import AddPageAppBar from "../components/AddPage/AddPageAppBar";
+import {Outlet} from "react-router-dom";
 
 export default function AddPage(){
     return(
         <>
-            <AddPageAppBar/>
-            <Outlet/>
+            <header>
+                <AddPageAppBar/>
+            </header>
+            <main>
+                <Outlet/>
+            </main>
         </>
     );
 }
