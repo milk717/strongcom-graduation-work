@@ -6,10 +6,25 @@ import ReminderTitleInput from "../components/AddPage/ReminderTitleInput";
 import ReminderDateInput from "../components/AddPage/ReminderDateInput";
 import ReminderTimeInput from "../components/AddPage/ReminderTimeInput";
 import BottomTwoButton from "../components/AddPage/BottomTwoButton";
+import {initReminder, postReminderAsync} from "../modules/reminderSlice";
+import {useNavigate} from "react-router-dom";
+import {initAddPageToggleState} from "../modules/inputStateSlice";
 
 export default function ReminderInfoInputContainer() {
     const reminder = useSelector((state) => state.reminder);
     const dispatch = useDispatch();
+    const navigate = useNavigate();
+
+    const handleCancel = () => {
+        dispatch(initReminder());
+        navigate('/home');
+    }
+
+    const handleSubmit = () => {
+        dispatch(postReminderAsync(reminder));
+        dispatch(initAddPageToggleState());
+        navigate('/home')
+    }
 
     return (
         <>
@@ -17,18 +32,12 @@ export default function ReminderInfoInputContainer() {
             <ReminderDateInput/>
             <ReminderTimeInput/>
             <footer>
-                <BottomTwoButton
+                  <BottomTwoButton
                     secondBtnName={'저장'}
-                    // onSubmit={() => dispatch(postReminder())}
+                    onSubmit={handleSubmit}
+                    onCancel={handleCancel}
                 />
             </footer>
         </>
     );
 }
-
-const RowStack = styled.div`
-  display: flex;
-  justify-content: ${props=>props.justifyContent || 'space-between'};
-  align-items: center;
-  margin-bottom: ${props => props.bottomMargin};
-`

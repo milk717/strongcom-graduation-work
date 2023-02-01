@@ -15,7 +15,7 @@ export default function AddPageAppBar(){
             <Box sx={{width: '100%'}}>
                 <DefaultAppBar>
                     <Toolbar>
-                        <StyledButton to='/notice' onClick={()=>navigate(-1)}>
+                        <StyledButton onClick={()=>navigate(-1)}>
                             <ArrowBackIosNewOutlinedIcon/>
                         </StyledButton>
                         <Typography

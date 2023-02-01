@@ -11,6 +11,7 @@ export const jsonApi = createApi({
         getReminder: builder.query({
             query: () => createRequest(`reminder`)
         }),
+        postReminder: builder.query({})
     })
 });
 

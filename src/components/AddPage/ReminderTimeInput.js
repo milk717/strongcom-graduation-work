@@ -8,14 +8,15 @@ import {LocalizationProvider} from "@mui/x-date-pickers/LocalizationProvider";
 import {TimePicker as MuiTimePicker} from "@mui/x-date-pickers";
 import {endTimeInput, startTimeInput} from "../../modules/reminderSlice";
 import dayjs from "dayjs";
+import {timeToggleInput} from "../../modules/inputStateSlice";
 
 export default function ReminderTimeInput() {
     const reminder = useSelector((state) => state.reminder);
+    const timeToggle = useSelector((state) => state.inputState.timeToggle);
     const dispatch = useDispatch();
-    const [timeToggle, setTimeToggle] = useState(false);
 
-    const handleTimeToggle = (e) => {
-        setTimeToggle(state => !state)
+    const handleTimeToggle = () => {
+        dispatch(timeToggleInput(!timeToggle))
     }
 
     return (

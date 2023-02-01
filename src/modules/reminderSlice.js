@@ -1,5 +1,6 @@
-import {createSlice} from '@reduxjs/toolkit';
+import {createSlice, createAsyncThunk} from '@reduxjs/toolkit';
 import dayjs from "dayjs";
+import * as reminderApi from '../api/reminder';
 
 const initialState = {
     title: '',
@@ -47,9 +48,29 @@ export const reminderSlice = createSlice({
         },
         RepetitionDayInput:(state,action) => {
             state.RepetitionDay = state.RepetitionDay + ` ${action.payload}`
-        }
+        },
+        RepetitionCancel:(state) => {
+            state.RepetitionPeriod = '';
+            state.RepetitionDay = '';
+        },
+        initReminder: (state, action) => {
+            Object.assign(state, initialState);
+        },
+    },
+    extraReducers: (builder)=>{
+        builder
+            .addCase(postReminderAsync.pending, (state)=>{})
+            .addCase(postReminderAsync.fulfilled, (state,action)=>{})
+            .addCase(postReminderAsync.rejected, (state,action)=>{})
     }
 });
+
+export const postReminderAsync = createAsyncThunk(
+    'reminder/postReminderStatus',
+    async(newReminder, thunkAPI)=>{
+    const response = await reminderApi.postReminder(newReminder);
+    return response.data;
+})
 
 export const {
     titleInput,
@@ -59,7 +80,8 @@ export const {
     startTimeInput,
     endTimeInput,
     RepetitionPeriodInput,
-    RepetitionDayInput
+    RepetitionDayInput,
+    RepetitionCancel,
+    initReminder,
 } = reminderSlice.actions
 
-export default reminderSlice.reducer

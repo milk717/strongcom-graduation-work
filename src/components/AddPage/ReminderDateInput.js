@@ -12,15 +12,16 @@ import { DatePicker as MuiDatePicker } from '@mui/x-date-pickers/DatePicker';
 import dayjs from "dayjs";
 import {endDateInput, startDateInput} from "../../modules/reminderSlice";
 import {useNavigate} from "react-router-dom";
+import {dateToggleInput} from "../../modules/inputStateSlice";
 
 export default function ReminderDateInput(){
     const reminder = useSelector((state) => state.reminder);
-    const [dateToggle, setDateToggle] = useState(false);
+    const dateToggle = useSelector((state) => state.inputState.dateToggle);
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
-    const handleDateToggle = (e) => {
-        setDateToggle(state => !state)
+    const handleDateToggle = () => {
+        dispatch(dateToggleInput(!dateToggle))
     }
 
 

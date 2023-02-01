@@ -1,7 +1,11 @@
-import {Button as MuiButton} from "@mui/material";
+import {BottomNavigation, Button as MuiButton} from "@mui/material";
 import styled from "styled-components";
 
-export default function BottomTwoButton({secondBtnName, onSubmit, onCancel}){
+export default function BottomTwoButton({
+                                            secondBtnName,
+                                            onSubmit,
+                                            onCancel
+}){
 
     return(
         <ButtonWrapper>
@@ -19,5 +23,6 @@ const ButtonWrapper = styled.div`
 `
 
 const Button = styled(MuiButton)`
-  color: ${props => props.theme.color.white}
+  color: ${props => props.theme.color.white};
+  margin: 4px 0 4px 0;
 `

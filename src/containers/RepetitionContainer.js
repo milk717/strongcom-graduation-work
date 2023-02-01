@@ -3,8 +3,17 @@ import styled from "styled-components";
 import RepetitionCheckboxList from "../components/AddPage/RepetitionCheckboxList";
 import BottomTwoButton from "../components/AddPage/BottomTwoButton";
 import * as React from "react";
+import {useNavigate} from "react-router-dom";
+import {useDispatch} from "react-redux";
+import {RepetitionCancel} from "../modules/reminderSlice";
 
 export default function RepetitionContainer(){
+    const navigate = useNavigate()
+    const dispatch = useDispatch();
+    const handleCancel = () =>{
+        dispatch(RepetitionCancel())
+        navigate('/add');
+    }
     return(
         <>
             <Stack>
@@ -17,7 +26,8 @@ export default function RepetitionContainer(){
             <footer>
                 <BottomTwoButton
                     secondBtnName={'적용'}
-                    // onSubmit={() => dispatch(postReminder())}
+                    onSubmit={()=>navigate('/add')}
+                    onCancel={handleCancel}
                 />
             </footer>
         </>
