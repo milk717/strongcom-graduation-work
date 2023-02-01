@@ -9,9 +9,8 @@ export const jsonApi = createApi({
     baseQuery: fetchBaseQuery({baseUrl}),
     endpoints:(builder)=>({
         getReminder: builder.query({
-            query: () => createRequest(`reminder`)
+            query: (filter) => createRequest(`reminder?filter=${filter}`)
         }),
-        postReminder: builder.query({})
     })
 });
 

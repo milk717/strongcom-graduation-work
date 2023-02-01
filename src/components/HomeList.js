@@ -6,7 +6,7 @@ export default function HomeList({listData}){
         <>
             <List sx={{width: '100%'}}>
                 {listData.map((value,index) => (
-                    <div key = {value.id}>
+                    <div key = {value.id || value._id}>
                         <ListItemBox
                             key={value.id}
                             disableGutters

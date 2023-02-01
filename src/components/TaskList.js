@@ -4,7 +4,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {useGetReminderQuery} from "../api/jsonApi";
 
 export default function TaskList() {
-    const {data, error, isLoading} = useGetReminderQuery();
+    const {data, error, isLoading} = useGetReminderQuery('active');
 
     if(isLoading) return 'Loading...'
     console.log(data)

@@ -5,7 +5,7 @@ import {useSelector} from "react-redux";
 import {useGetReminderQuery} from "../api/jsonApi";
 
 export default function HomeContainer(){
-    const {data, error, isLoading} = useGetReminderQuery();
+    const {data, error, isLoading} = useGetReminderQuery('today');
 
     if(isLoading) return 'Loading...'
     if(error)return 'Error'
