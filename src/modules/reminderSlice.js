@@ -27,10 +27,10 @@ export const reminderSlice = createSlice({
             state.endDate = action.payload;
         },
         startTimeInput: (state,action) => {
-            state.startDate = action.payload;
+            state.startTime = action.payload;
         },
         endTimeInput: (state,action) => {
-            state.endDate = action.payload;
+            state.endTime = action.payload;
         },
     }
 });

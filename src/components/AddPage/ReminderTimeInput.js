@@ -7,11 +7,12 @@ import {AdapterDayjs} from "@mui/x-date-pickers/AdapterDayjs";
 import {LocalizationProvider} from "@mui/x-date-pickers/LocalizationProvider";
 import {TimePicker as MuiTimePicker} from "@mui/x-date-pickers";
 import {endTimeInput, startTimeInput} from "../../modules/reminderSlice";
+import dayjs from "dayjs";
 
 export default function ReminderTimeInput() {
     const reminder = useSelector((state) => state.reminder);
     const dispatch = useDispatch();
-    const [timeToggle, setTimeToggle] = useState(true);
+    const [timeToggle, setTimeToggle] = useState(false);
 
     const handleTimeToggle = (e) => {
         setTimeToggle(state => !state)
@@ -38,17 +39,17 @@ export default function ReminderTimeInput() {
                         <RowStack bottomMargin='8px' justifyContent='space-around'>
                             <LocalizationProvider dateAdapter={AdapterDayjs}>
                                 <TimePicker
-                                    value={reminder.startTime}
+                                    value={dayjs(reminder.startTime)}
                                     onChange={(newValue) => {
-                                        dispatch(startTimeInput(newValue))
+                                        dispatch(startTimeInput(newValue.format()))
                                     }}
                                     renderInput={(params) => <TextField {...params} />}
                                 />
                                 ~
                                 <TimePicker
-                                    value={reminder.endTime}
+                                    value={dayjs(reminder.endTime)}
                                     onChange={(newValue) => {
-                                        dispatch(endTimeInput(newValue))
+                                        dispatch(endTimeInput(newValue.format()))
                                     }}
                                     renderInput={(params) => <TextField {...params} />}
                                 />

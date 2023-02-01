@@ -15,7 +15,7 @@ import {useNavigate} from "react-router-dom";
 
 export default function ReminderDateInput(){
     const reminder = useSelector((state) => state.reminder);
-    const [dateToggle, setDateToggle] = useState(true);
+    const [dateToggle, setDateToggle] = useState(false);
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
