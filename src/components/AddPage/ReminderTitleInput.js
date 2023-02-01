@@ -1,4 +1,4 @@
-import BasicBox from "../BasicBox";
+import BasicBox from "../common/BasicBox";
 import {contentInput, titleInput} from "../../modules/reminderSlice";
 import {useDispatch, useSelector} from "react-redux";
 import {useRef} from "react";

@@ -4,7 +4,7 @@ import {AppBar as MuiAppBar, Box, Toolbar, Typography} from "@mui/material";
 import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
 import {Link, useLocation} from "react-router-dom";
 import {useEffect, useState} from "react";
-import {pageList} from "../resources/string";
+import {pageList} from "../../resources/string";
 
 
 export default function AppBar({

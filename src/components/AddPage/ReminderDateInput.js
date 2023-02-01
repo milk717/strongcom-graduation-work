@@ -1,7 +1,7 @@
 import {Switch, TextField, Typography} from "@mui/material";
 import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
 import RepeatOutlinedIcon from "@mui/icons-material/RepeatOutlined";
-import BasicBox from "../BasicBox";
+import BasicBox from "../common/BasicBox";
 import * as React from "react";
 import styled from "styled-components";
 import {useState} from "react";

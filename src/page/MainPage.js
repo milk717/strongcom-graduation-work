@@ -1,5 +1,5 @@
-import AppBar from "../components/AppBar";
-import BottomBar from "../components/BottomBar";
+import AppBar from "../components/common/AppBar";
+import BottomBar from "../components/common/BottomBar";
 import {Outlet, useNavigate} from "react-router-dom";
 import AddTaskIcon from "@mui/icons-material/AddTask";
 import {IconButton as MuiIconButton} from "@mui/material";

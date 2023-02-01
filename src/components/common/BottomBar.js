@@ -7,7 +7,7 @@ import GroupOutlinedIcon from '@mui/icons-material/GroupOutlined';
 import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
 import styled from "styled-components";
 import {useLocation, useNavigate} from "react-router-dom";
-import {pageList} from "../resources/string";
+import {pageList} from "../../resources/string";
 
 
 export default function BottomBar() {

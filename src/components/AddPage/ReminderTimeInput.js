@@ -1,5 +1,5 @@
 import {Switch, TextField, Typography} from "@mui/material";
-import BasicBox from "../BasicBox";
+import BasicBox from "../common/BasicBox";
 import styled from "styled-components";
 import {useDispatch, useSelector} from "react-redux";
 import {useState} from "react";
