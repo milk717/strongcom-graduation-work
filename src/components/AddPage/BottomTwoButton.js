@@ -15,6 +15,7 @@ const ButtonWrapper = styled.div`
   display: flex;
   justify-content: space-around;
   background: ${props => props.theme.color.primaryLight};
+  width: 100%;
 `
 
 const Button = styled(MuiButton)`

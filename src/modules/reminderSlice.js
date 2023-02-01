@@ -6,6 +6,8 @@ const initialState = {
     content: '',
     startDate: dayjs().format(),
     endDate: dayjs().format(),
+    RepetitionPeriod: '',
+    RepetitionDay:'',
 }
 
 export const reminderSlice = createSlice({
@@ -40,6 +42,12 @@ export const reminderSlice = createSlice({
                 .set('second', payloadTime.get('second'))
                 .format();
         },
+        RepetitionPeriodInput: (state, action) => {
+            state.RepetitionPeriod = action.payload;
+        },
+        RepetitionDayInput:(state,action) => {
+            state.RepetitionDay = state.RepetitionDay + ` ${action.payload}`
+        }
     }
 });
 
@@ -49,7 +57,9 @@ export const {
     startDateInput,
     endDateInput,
     startTimeInput,
-    endTimeInput
+    endTimeInput,
+    RepetitionPeriodInput,
+    RepetitionDayInput
 } = reminderSlice.actions
 
 export default reminderSlice.reducer

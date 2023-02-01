@@ -18,5 +18,5 @@ const StyledBox = styled.div`
   margin-top: 24px;
   padding: 16px ;
   background-color: ${props=>props.theme.color.white};
-  cursor:pointer;
+  cursor:default;
 `
