@@ -5,17 +5,23 @@ import * as React from "react";
 import ReminderTitleInput from "../components/AddPage/ReminderTitleInput";
 import ReminderDateInput from "../components/AddPage/ReminderDateInput";
 import ReminderTimeInput from "../components/AddPage/ReminderTimeInput";
+import BottomTwoButton from "../components/AddPage/BottomTwoButton";
 
 export default function ReminderInfoInputContainer() {
     const reminder = useSelector((state) => state.reminder);
     const dispatch = useDispatch();
-    const [timeToggle, setTimeToggle] = useState(true);
 
     return (
         <>
             <ReminderTitleInput/>
             <ReminderDateInput/>
             <ReminderTimeInput/>
+            <footer>
+                <BottomTwoButton
+                    secondBtnName={'저장'}
+                    // onSubmit={() => dispatch(postReminder())}
+                />
+            </footer>
         </>
     );
 }

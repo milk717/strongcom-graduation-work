@@ -1,20 +1,12 @@
 import {Button as MuiButton} from "@mui/material";
-import {useLocation} from "react-router-dom";
-import {useEffect, useState} from "react";
 import styled from "styled-components";
 
-export default function BottomTwoButton(){
-    const location = useLocation();
-    const [secondBtnName, setSecondBtnName] = useState(location.pathname==='/add' ? '저장':'적용' );
-
-    useEffect(() =>{
-        setSecondBtnName((state)=>location.pathname==='/add' ? '저장':'적용' )
-    },[location])
+export default function BottomTwoButton({secondBtnName, onSubmit, onCancel}){
 
     return(
         <ButtonWrapper>
-            <Button>취소</Button>
-            <Button>{secondBtnName}</Button>
+            <Button onClick={onCancel}>취소</Button>
+            <Button onClick={onSubmit}>{secondBtnName}</Button>
         </ButtonWrapper>
     )
 }

@@ -11,9 +11,6 @@ export default function AddPage(){
             <main>
                 <Outlet/>
             </main>
-            <footer>
-                <BottomTwoButton/>
-            </footer>
         </>
     );
 }

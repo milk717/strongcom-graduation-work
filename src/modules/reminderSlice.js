@@ -6,8 +6,6 @@ const initialState = {
     content: '',
     startDate: dayjs().format(),
     endDate: dayjs().format(),
-    startTime: dayjs().format(),
-    endTime: dayjs().format(),
 }
 
 export const reminderSlice = createSlice({
@@ -17,24 +15,41 @@ export const reminderSlice = createSlice({
         titleInput: (state, action) => {
             state.title = action.payload;
         },
-        contentInput: (state,action) => {
+        contentInput: (state, action) => {
             state.content = action.payload;
         },
-        startDateInput: (state,action) => {
+        startDateInput: (state, action) => {
             state.startDate = action.payload;
         },
-        endDateInput: (state,action) => {
+        endDateInput: (state, action) => {
             state.endDate = action.payload;
         },
-        startTimeInput: (state,action) => {
-            state.startTime = action.payload;
+        startTimeInput: (state, action) => {
+            let payloadTime = dayjs(action.payload);
+            state.startDate = dayjs(state.startDate)
+                .set('hour', payloadTime.get('hour'))
+                .set('minute', payloadTime.get('minute'))
+                .set('second', payloadTime.get('second'))
+                .format();
         },
-        endTimeInput: (state,action) => {
-            state.endTime = action.payload;
+        endTimeInput: (state, action) => {
+            let payloadTime = dayjs(action.payload);
+            state.endDate = dayjs(state.endDate)
+                .set('hour', payloadTime.get('hour'))
+                .set('minute', payloadTime.get('minute'))
+                .set('second', payloadTime.get('second'))
+                .format();
         },
     }
 });
 
-export const {titleInput, contentInput,startDateInput,endDateInput,startTimeInput,endTimeInput} = reminderSlice.actions
+export const {
+    titleInput,
+    contentInput,
+    startDateInput,
+    endDateInput,
+    startTimeInput,
+    endTimeInput
+} = reminderSlice.actions
 
 export default reminderSlice.reducer

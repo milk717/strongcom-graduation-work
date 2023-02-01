@@ -39,7 +39,7 @@ export default function ReminderTimeInput() {
                         <RowStack bottomMargin='8px' justifyContent='space-around'>
                             <LocalizationProvider dateAdapter={AdapterDayjs}>
                                 <TimePicker
-                                    value={dayjs(reminder.startTime)}
+                                    value={dayjs(reminder.startDate)}
                                     onChange={(newValue) => {
                                         dispatch(startTimeInput(newValue.format()))
                                     }}
@@ -47,7 +47,7 @@ export default function ReminderTimeInput() {
                                 />
                                 ~
                                 <TimePicker
-                                    value={dayjs(reminder.endTime)}
+                                    value={dayjs(reminder.endDate)}
                                     onChange={(newValue) => {
                                         dispatch(endTimeInput(newValue.format()))
                                     }}
